@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebulon Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Nebulon Project" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(-20px);
+        }
+
+        .section-title {
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        .discord-card-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-card {
+            background: rgba(20, 20, 25, 0.95);
+            border: 1px solid rgba(88, 101, 242, 0.3);
+            border-radius: 20px;
+            padding: 50px 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px; 
+            width: 100%;
+            box-shadow: 0 0 30px rgba(88, 101, 242, 0.15);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #5865F2;
+            box-shadow: 0 0 50px rgba(88, 101, 242, 0.4);
+        }
+
+        .icon-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            background: rgba(88, 101, 242, 0.2);
+            color: #5865F2;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover .icon-box {
+            transform: scale(1.1);
+            background: #5865F2;
+            color: #fff;
+        }
+
+        .contact-card h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-size: 1rem;
+        }
+
+        .btn-discord-action {
+            padding: 15px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background-color: #5865F2;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-discord-action:hover {
+            background-color: #4752c4;
+            box-shadow: 0 5px 20px rgba(88, 101, 242, 0.5);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animation">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fa-solid fa-atom"></i> NEBULON PROJECT
+                </a>
+            </div>
+
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="projects.html">Projeler</a></li>
+                    <li><a href="team.html">Ekibimiz</a></li>
+                    <li><a href="iletisim.html" class="active">İletişim</a></li>
+                    <li><a href="https://discord.gg/kj5grZuxyQ" target="_blank">Discord</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="mobile-dropdown" id="mobileDropdown">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="projects.html">Projeler</a></li>
+                <li><a href="team.html">Ekibimiz</a></li>
+                <li><a href="iletisim.html" class="active">İletişim</a></li>
+                <li><a href="https://discord.gg/kj5grZuxyQ" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container" style="padding-top: 0px;">
+        
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>TOPLULUĞA KATIL</h2>
+                <p>Destek almak, öneride bulunmak veya sohbet etmek için Discord sunucumuza gel.</p>
+            </div>
+
+            <div class="discord-card-wrapper">
+                <div class="contact-card">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <h3>Discord Sunucusu</h3>
+                    <p>Tüm duyurular, güncellemeler ve destek talepleri için sunucumuzda aktif ol. Seni de aramızda görmek istiyoruz!</p>
+                    
+                    <a href="https://discord.gg/kj5grZuxyQ" target="_blank" class="btn-discord-action">
+                        Sunucuya Katıl <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>Nebulon Project, Minecraft ekosistemine yönelik pluginler, Discord botları ve sunucu paketleri geliştiren bir kuruluştur. Tüm hizmetlerimizde performans ve güvenliği ön planda tutarak, stabil ve sorunsuz bir deneyim sunuyoruz.</p>
+                </div>
+                <div class="footer-icon">
+                    <a href="https://discord.gg/kj5grZuxyQ" target="_blank">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nebulon Project. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

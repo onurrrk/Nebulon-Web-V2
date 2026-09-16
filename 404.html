@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebulon Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Nebulon Project" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .error-section {
+            flex: 1; 
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;     
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+
+        }
+
+        .error-code {
+            font-size: 10rem;
+            font-weight: 800;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 4px #5865F2;
+            position: relative;
+            margin-bottom: 0px;
+            animation: float 6s ease-in-out infinite;
+            user-select: none;
+        }
+
+        .error-code::before, .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .error-code::before {
+            animation: glitch-1 2s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translate(-3px, -2px);
+        }
+
+        .error-code::after {
+            animation: glitch-2 2s infinite;
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+            transform: translate(3px, 2px);
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .error-desc {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn-home {
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #5865F2, #4752c4);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: 0.3s ease;
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(88, 101, 242, 0.7);
+        }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        @keyframes glitch-1 { 0% { transform: translate(0); } 20% { transform: translate(-3px, 3px); } 40% { transform: translate(-3px, -3px); } 60% { transform: translate(3px, 3px); } 80% { transform: translate(3px, -3px); } 100% { transform: translate(0); } }
+        @keyframes glitch-2 { 0% { transform: translate(0); } 20% { transform: translate(3px, -3px); } 40% { transform: translate(3px, 3px); } 60% { transform: translate(-3px, -3px); } 80% { transform: translate(-3px, 3px); } 100% { transform: translate(0); } }
+
+        @media (max-width: 768px) {
+            .error-code { font-size: 6rem; -webkit-text-stroke: 2px #5865F2; }
+            .error-title { font-size: 1.5rem; }
+            .error-section { padding-bottom: 50px; padding-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animation">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fa-solid fa-atom"></i> NEBULON PROJECT
+                </a>
+            </div>
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="projects.html">Projeler</a></li>
+                    <li><a href="team.html">Ekibimiz</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="https://discord.gg/kj5grZuxyQ" target="_blank">Discord</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="mobile-dropdown" id="mobileDropdown">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="projects.html">Projeler</a></li>
+                <li><a href="team.html">Ekibimiz</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="https://discord.gg/kj5grZuxyQ" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="error-section">
+        <div class="error-code">404</div>
+        <h1 class="error-title">EVRENDE KAYBOLDUN!</h1>
+        <p class="error-desc">
+            Aradığın sayfa bir kara delik tarafından yutulmuş olabilir veya hiç var olmamış olabilir.
+            Endişelenme, ana gemiye dönmek için aşağıdaki butonu kullanabilirsin.
+        </p>
+        <a href="index.html" class="btn-home">
+            <i class="fa-solid fa-shuttle-space"></i> Ana Sayfaya Işınlan
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>Nebulon Project, Minecraft ekosistemine yönelik pluginler, Discord botları ve sunucu paketleri geliştiren bir kuruluştur. Tüm hizmetlerimizde performans ve güvenliği ön planda tutarak, stabil ve sorunsuz bir deneyim sunuyoruz.</p>
+                </div>
+                <div class="footer-icon">
+                    <a href="https://discord.gg/kj5grZuxyQ" target="_blank">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nebulon Project. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

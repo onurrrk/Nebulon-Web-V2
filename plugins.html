@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebulon Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Nebulon Project" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <style>
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+            align-items: stretch;
+        }
+
+        .project-card {
+            background: #151518;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            width: 320px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 400px; 
+            box-sizing: border-box;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d2ff;
+        }
+
+        .card-image {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+
+        .card-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .version-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #00d2ff;
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 10px; 
+        }
+
+        .card-content h3 {
+            color: #fff;
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+            line-height: 1.2;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .desc {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            min-height: 75px;
+        }
+
+        .tech-stack {
+            margin-bottom: 25px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .tech-stack span {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin: 0 3px;
+        }
+
+        .card-actions {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: auto;
+        }
+
+        .price {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .btn-sm {
+            background: #00d2ff;
+            color: #000;
+            padding: 8px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .btn-sm:hover {
+            background: #00b8e6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animation">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none; color:white;">
+                    <i class="fa-solid fa-atom"></i> NEBULON PROJECT
+                </a>
+            </div>
+
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="projects.html" class="active">Projeler</a></li>
+                    <li><a href="team.html">Ekibimiz</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="https://discord.gg/kj5grZuxyQ" target="_blank">Discord</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="mobile-dropdown" id="mobileDropdown">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="projects.html" class="active">Projeler</a></li>
+                <li><a href="team.html">Ekibimiz</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="https://discord.gg/kj5grZuxyQ" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="projects" class="container" style="padding: 40px 20px; max-width: 1200px; margin: 0 auto; transform: translateY(-10px);">
+        
+        <a href="projects.html" 
+           style="color: #aaa; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; width: fit-content; 
+           margin-bottom: 10px;">
+            <i class="fa-solid fa-arrow-left"></i> Kategorilere Dön
+        </a>
+
+        <div class="section-title" style="text-align: center; margin-bottom: 30px;"> 
+            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 10px;">GÜNCEL EKLENTİLER</h2>
+            <p style="font-size: 1.1rem; color: #a0a0a0;">İndirmek istediğiniz eklentiyi seçin.</p>
+        </div>
+
+        <div class="projects-grid">
+            
+            <div class="project-card" id="card-spawnersystem">
+                <div class="version-tag" id="spawner-downloads">
+                    <i class="fa-solid fa-download"></i> ...
+                </div>
+                
+                <div class="card-image">
+                    <img src="assets/proje1.png" alt="Spawner System">
+                </div>
+                
+                <div class="card-content">
+                    <h3>SpawnerSystem</h3>
+                    <p class="desc">Minecraft sunucunuz için tam kapsamlı gelişmiş spawner eklentisi.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <span class="price">Ücretsiz</span>
+                    <a href="https://modrinth.com/plugin/spawnersystem" target="_blank" class="btn-sm">
+                        İndir <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" id="card-phantomblocker">
+                <div class="version-tag" id="phantom-downloads">
+                    <i class="fa-solid fa-download"></i> ...
+                </div>
+                <div class="card-image">
+                    <img src="assets/proje2.png" alt="PhantomBlocker">
+                </div>
+                
+                <div class="card-content">
+                    <h3>PhantomBlocker</h3>
+                    <p class="desc">Minecraft sunucunuzda phantom yaratıklarının doğmasını engelleyen basit bir eklenti.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <span class="price">Ücretsiz</span>
+                    <a href="https://modrinth.com/plugin/phantomblocker" target="_blank" class="btn-sm">
+                        İndir <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" id="card-envprotect">
+                <div class="version-tag" id="env-downloads">
+                    <i class="fa-solid fa-download"></i> ...
+                </div>
+                <div class="card-image">
+                    <img src="assets/proje3.png" alt="EnvProtect">
+                </div>
+                
+                <div class="card-content">
+                    <h3>EnvProtect</h3>
+                    <p class="desc">Minecraft sunucunuz için basit bir envanter koruma eklentisi.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <span class="price">Ücretsiz</span>
+                    <a href="https://modrinth.com/plugin/envprotect" target="_blank" class="btn-sm">
+                        İndir <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+          
+            <div class="project-card" id="card-instantshield">
+                <div class="version-tag" id="shield-downloads">
+                    <i class="fa-solid fa-download"></i> ...
+                </div>
+                <div class="card-image">
+                    <img src="assets/proje4.png" alt="InstantShield">
+                </div>
+                
+                <div class="card-content">
+                    <h3>InstantShield</h3>
+                    <p class="desc">Kalkan etkinleştirme gecikmesini 5 tikten 0'a düşürür.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <span class="price">Ücretsiz</span>
+                    <a href="https://modrinth.com/plugin/instantshield" target="_blank" class="btn-sm">
+                        İndir <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card" id="card-advancedtags">
+                <div class="version-tag" id="advanced-downloads">
+                    <i class="fa-solid fa-download"></i> ...
+                </div>
+                <div class="card-image">
+                    <img src="assets/proje5.png" alt="AdvancedTags">
+                </div>
+                
+                <div class="card-content">
+                    <h3>AdvancedTags</h3>
+                    <p class="desc">Minecraft sunucuları için modern, yüksek performanslı bir etiket yönetim sistemi.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <span class="price">Ücretsiz</span>
+                    <a href="https://modrinth.com/plugin/advancedtags" target="_blank" class="btn-sm">
+                        İndir <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>            
+
+            <div class="project-card" id="card-dynamicdistance">
+                <div class="version-tag" id="dynamic-downloads">
+                    <i class="fa-solid fa-download"></i> ...
+                </div>
+                <div class="card-image">
+                    <img src="assets/proje6.png" alt="DynamicDistance">
+                </div>
+                
+                <div class="card-content">
+                    <h3>DynamicDistance</h3>
+                    <p class="desc">Minecraft sunucuları için proaktif, akıllı bir görüş & simülasyon mesafesi optimizasyon motoru.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <span class="price">Ücretsiz</span>
+                    <a href="https://modrinth.com/plugin/dynamicdistance" target="_blank" class="btn-sm">
+                        İndir <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>  
+
+            <div class="project-card" id="card-pursecommand">
+                <div class="version-tag" id="purse-downloads">
+                    <i class="fa-solid fa-download"></i> ...
+                </div>
+                <div class="card-image">
+                    <img src="assets/proje7.png" alt="PurseCommand">
+                </div>
+                
+                <div class="card-content">
+                    <h3>PurseCommand</h3>
+                    <p class="desc">Oyuncuların altın külçelerini oyun içi bakiye olarak kullanmalarını sağlayan ideal kese eklentisi.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <span class="price">Ücretsiz</span>
+                    <a href="https://modrinth.com/plugin/pursecommand" target="_blank" class="btn-sm">
+                        İndir <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>        
+        
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>Nebulon Project, Minecraft ekosistemine yönelik pluginler, Discord botları ve sunucu paketleri geliştiren bir kuruluştur. Tüm hizmetlerimizde performans ve güvenliği ön planda tutarak, stabil ve sorunsuz bir deneyim sunuyoruz.</p>
+                </div>
+
+                <div class="footer-icon">
+                    <a href="https://discord.gg/kj5grZuxyQ" target="_blank">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nebulon Project. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" onclick="window.scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

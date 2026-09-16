@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebulon Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Nebulon Project" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <style>
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(0, 1fr) !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animation">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none; color:white;">
+                    <i class="fa-solid fa-atom"></i> NEBULON PROJECT
+                </a>
+            </div>
+
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="projects.html" class="active">Projeler</a></li>
+                    <li><a href="team.html">Ekibimiz</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="https://discord.gg/kj5grZuxyQ" target="_blank">Discord</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="mobile-dropdown" id="mobileDropdown">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="projects.html" class="active">Projeler</a></li>
+                <li><a href="team.html">Ekibimiz</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="https://discord.gg/kj5grZuxyQ" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="categories" class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 25px;">
+        
+        <div class="section-title" style="text-align: center; margin-top: 30px;">
+            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 10px;">PROJE KATEGORİLERİ</h2>
+            <p style="font-size: 1.1rem; color: #a0a0a0;">İncelemek istediğiniz alanı seçin.</p>
+        </div>
+
+        <div class="projects-grid" style="margin-top: 30px; padding-bottom: 80px;">
+            
+            <div class="project-card" style="text-align: center;">
+                <div class="card-image" style="height: 120px; display:flex; align-items:center; justify-content:center; background: rgba(0, 210, 255, 0.1);">
+                    <i class="fa-solid fa-puzzle-piece" style="font-size: 3rem; color: var(--primary);"></i>
+                </div>
+                <div class="card-content">
+                    <h3>EKLENTİLER</h3>
+                    <p class="desc">Minecraft sunucuları için geliştirilmiş eklentiler.</p>
+                    <div class="card-actions" style="justify-content: center;">
+                        <a href="plugins.html" class="btn-sm" style="width: 100%; text-align: center;">
+                            Listeye Git <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" style="text-align: center;">
+                <div class="card-image" style="height: 120px; display:flex; align-items:center; justify-content:center; background: rgba(4,46,64);">
+                    <i class="fa-brands fa-discord" style="font-size: 3rem; color: var(--quaternary);"></i>
+                </div>
+                <div class="card-content">
+                    <h3>BOTLAR</h3>
+                    <p class="desc">Discord ve oyun entegrasyonlu botlar.</p>
+                    <div class="card-actions" style="justify-content: center;">
+                        <a href="#" class="btn-sm" style="width: 100%; text-align: center;">
+                            Yakında...
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" style="text-align: center;">
+                <div class="card-image" style="height: 120px; display:flex; align-items:center; justify-content:center; background: rgba(255, 255, 255, 0.1);">
+                    <i class="fa-solid fa-box-archive" style="font-size: 3rem; color: #787b7d;"></i>
+                </div>
+                <div class="card-content">
+                    <h3>PAKETLER</h3>
+                    <p class="desc">Hazır sunucu paketleri.</p>
+                    <div class="card-actions" style="justify-content: center;">
+                        <a href="#" class="btn-sm" style="width: 100%; text-align: center;">
+                            Yakında...
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>Nebulon Project, Minecraft ekosistemine yönelik pluginler, Discord botları ve sunucu paketleri geliştiren bir kuruluştur. Tüm hizmetlerimizde performans ve güvenliği ön planda tutarak, stabil ve sorunsuz bir deneyim sunuyoruz.</p>
+                </div>
+                <div class="footer-icon">
+                    <a href="https://discord.gg/kj5grZuxyQ" target="_blank">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nebulon Project. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
